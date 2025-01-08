@@ -1,0 +1,25 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+
+        num = str(x)
+        reverse_num = num[::-1]
+        new_items = ""
+        reverse_counter = 0
+
+
+        for i in num:
+            if i == reverse_num[reverse_counter]:
+                new_items = new_items + str(i)
+                reverse_counter += 1
+            else:
+                return False
+        if int(new_items) == x:
+            return True
+
+        #Method2
+        """num = str(x)
+        return num == num[::-1]"""
